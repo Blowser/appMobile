@@ -38,20 +38,16 @@
 
 
 :root {
-    --ion-color-dark: #1e1e1e; /* Fondo oscuro */
-    --ion-color-dark-contrast: #ffffff; /* Contraste blanco */
-    --ion-color-dark-shade: #121212;
-    --ion-color-dark-tint: #383838;
-  
-    --ion-color-skeleton: #dcdcdc; /* Color hueso */
-    --ion-color-skeleton-contrast: #2b2b2b; /* Contraste oscuro */
-    --ion-color-skeleton-tint: #e8e8e8;
-    --ion-color-skeleton-shade: #bfbfbf;
-  }
-
-  .skeleton-theme {
-    --background: #dcdcdc; /* Color hueso */
-    --color: #2b2b2b; /* Texto oscuro */
+  --ion-color-header-bg: #1a1a1a; /* Fondo del header (gris muy oscuro) */
+  --ion-color-header-text: #c9b037; /* Texto del header (dorado suave) */
+  --ion-color-content-bg: #1a1a1a; /* Fondo del contenido (gris muy oscuro) */
+  --ion-color-content-text: #e0e0e0; /* Texto del contenido (gris claro) */
+  --ion-color-footer-bg: #1a1a1a; /* Fondo del footer (gris muy oscuro) */
+  --ion-color-footer-text: #c9b037; /* Texto del footer (dorado suave) */
+  --ion-color-button-bg: #333333; /* Fondo de los botones (gris medio) */
+  --ion-color-button-text: #c9b037; /* Texto de los botones (dorado suave) */
+  ion-input, ion-select, ion-datetime { /*Colores del content*/
+    --color: var(--ion-color-content-text);
   }
   
-  
+}
