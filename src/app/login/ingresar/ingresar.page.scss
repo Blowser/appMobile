@@ -1,0 +1,26 @@
+.center-text {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .login-form {
+    margin-top: 20px;
+  }
+  
+  .custom-item {
+    --background: transparent; /* Quita el fondo oscuro */
+    --color: #ffffff; /* Cambia el color del texto si es necesario */
+  }
+  
+  .register-link {
+    color: #3880ff; /* Ajusta el color del enlace */
+    text-decoration: underline;
+    display: block;
+    margin-top: 10px;
+  }
+  .login-form {
+    max-width: 400px; /* Ajusta el ancho máximo */
+    margin: 0 auto; /* Centra el formulario */
+    padding: 0 10px; /* Añade un poco de espacio lateral */
+  }
+    
