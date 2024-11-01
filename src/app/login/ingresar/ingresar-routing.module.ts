@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-import { IngresarPage } from './ingresar.page';
+import { RouterModule, Routes } from '@angular/router';
+import { IngresarPage } from './ingresar.page'; // Verifica que la ruta de importación sea correcta
 
 const routes: Routes = [
   {
@@ -15,3 +14,4 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class IngresarPageRoutingModule {}
+
