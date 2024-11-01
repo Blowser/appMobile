@@ -1,19 +1,19 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar style="--background: var(--ion-color-header-bg); --color: var(--ion-color-header-text);">
     <ion-title>SkeletonApp</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content style="--background: var(--ion-color-content-bg); --color: var(--ion-color-content-text);">
   <ion-list>
     <ion-item>
-      <ion-input label="Nombre" placeholder="Ingrese Nombre"></ion-input>
+      <ion-input label="Nombre" placeholder="Ingrese Nombre" fill="outline"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input label="Apellido" placeholder="Ingrese Apellido"></ion-input>
+      <ion-input label="Apellido" placeholder="Ingrese Apellido" fill="outline"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-select label="Nivel de Educación" label-placement="floating" fill="outline" placeholder="Seleccione Nivel">
+      <ion-select label="Nivel de Educación"  fill="outline" placeholder="Seleccione Nivel">
         <ion-select-option value="primaria">Primaria</ion-select-option>
         <ion-select-option value="secundaria">Secundaria</ion-select-option>
         <ion-select-option value="universitaria">Universitaria</ion-select-option>
@@ -21,24 +21,28 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-input type="date" label="Fecha Nacimiento" placeholder="Seleccione Fecha"></ion-input>
+      <ion-input type="date" label="Fecha Nacimiento" placeholder="Seleccione Fecha" fill="outline"></ion-input>
     </ion-item>
   </ion-list>
 
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-button expand="block" color="medium">Limpiar</ion-button>
+        <ion-button expand="block" style="--background: var(--ion-color-button-bg); --color: var(--ion-color-button-text);">
+          Limpiar
+        </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button expand="block" color="primary">Mostrar</ion-button>
+        <ion-button expand="block" style="--background: var(--ion-color-button-bg); --color: var(--ion-color-button-text);">
+          Mostrar
+        </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-content>
-
+ 
 <ion-footer>
-  <ion-toolbar>
-    <ion-title>App desarrollada por: IJCG</ion-title>
+  <ion-toolbar style="--background: var(--ion-color-footer-bg); --color: var(--ion-color-footer-text);">
+    <ion-title>Desarrollado por IJCG</ion-title>
   </ion-toolbar>
 </ion-footer>
+
