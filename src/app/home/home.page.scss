@@ -1,0 +1,24 @@
+#titulobienvenida{
+    text-align: center;
+    color:#c9b037;
+    font-size: 3rem;
+    font-weight: bolder;
+    padding: 20px;       
+}
+#tituloinfoadd{
+    text-align: center;
+    color:#c9b037;
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-bottom: 60px;       
+}
+  
+  ion-item {
+    margin-bottom: 40px; /* Reduce el espacio entre los elementos */
+  }
+  
+  ion-input, ion-select {
+    --padding-start: 0;
+    --padding-end: 0;
+  }
+  
