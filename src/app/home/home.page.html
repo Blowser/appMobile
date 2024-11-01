@@ -4,7 +4,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content style="--background: var(--ion-color-content-bg); --color: var(--ion-color-content-text);">
+<ion-content>
+  <div class="welcome-section">
+    <h1 id="titulobienvenida">Bienvenido!</h1>
+    <p>Usuario: <strong>INGRESAR USER</strong></p>
+  </div>
+
+  <h2 id="tituloinfoadd" class="section-title" >Información Adicional</h2>
+
   <ion-list>
     <ion-item>
       <ion-input label="Nombre" placeholder="Ingrese Nombre" fill="outline"></ion-input>
@@ -13,7 +20,7 @@
       <ion-input label="Apellido" placeholder="Ingrese Apellido" fill="outline"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-select label="Nivel de Educación"  fill="outline" placeholder="Seleccione Nivel">
+      <ion-select label="Nivel de Educación" fill="outline" placeholder="Seleccione Nivel">
         <ion-select-option value="primaria">Primaria</ion-select-option>
         <ion-select-option value="secundaria">Secundaria</ion-select-option>
         <ion-select-option value="universitaria">Universitaria</ion-select-option>
@@ -39,10 +46,12 @@
       </ion-col>
     </ion-row>
   </ion-grid>
- 
+</ion-content>
+
 <ion-footer>
   <ion-toolbar style="--background: var(--ion-color-footer-bg); --color: var(--ion-color-footer-text);">
-    <ion-title>Desarrollado por IJCG</ion-title>
+    <ion-title>App desarrollada por IJCG</ion-title>
   </ion-toolbar>
 </ion-footer>
+
 
