@@ -1,26 +1,17 @@
 .center-text {
     text-align: center;
     margin-bottom: 15px;
-  }
-  
-  .login-form {
-    margin-top: 20px;
+    color: var(--ion-color-skeleton-text); /* Asegura que el texto sea claro */
   }
   
   .custom-item {
-    --background: transparent; /* Quita el fondo oscuro */
-    --color: #ffffff; /* Cambia el color del texto si es necesario */
+    --background: transparent; /* Quita el fondo por defecto */
+    --color: var(--ion-color-skeleton-text); /* Texto en color claro */
+    --placeholder-color: var(--ion-color-skeleton-accent); /* Color de placeholder */
   }
   
-  .register-link {
-    color: #3880ff; /* Ajusta el color del enlace */
-    text-decoration: underline;
-    display: block;
-    margin-top: 10px;
+  ion-button {
+    --background: var(--ion-color-skeleton-accent);
+    --color: var(--ion-color-skeleton-bg);
   }
-  .login-form {
-    max-width: 400px; /* Ajusta el ancho máximo */
-    margin: 0 auto; /* Centra el formulario */
-    padding: 0 10px; /* Añade un poco de espacio lateral */
-  }
-    
+  
