@@ -6,28 +6,47 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage implements OnInit { // Implementación de OnInit
   data: any = { usuario: '' };
+  informacion = { // Inicialización del objeto de información
+    nombre: '',
+    apellido: '',
+    nivelEducacion: '',
+    fechaNacimiento: ''
+  };
 
   constructor(private activeRoute: ActivatedRoute, private router: Router) {
     this.activeRoute.queryParams.subscribe(() => {
       const navigation = this.router.getCurrentNavigation();
-      if (navigation && navigation.extras && navigation.extras.state) {
-        console.log('Datos recibidos en Home:', navigation.extras.state); // Agregado para depurar
-        if (navigation.extras.state.usuario) {
-          this.data.usuario = navigation.extras.state.usuario;
-        } else {
-          console.warn('La clave "usuario" no existe en extras.state');
-          this.router.navigate(['/login/ingresar']);
-        }
+      if (navigation && navigation.extras.state && navigation.extras.state['usuario']) {
+        console.log('Datos recibidos en Home:', navigation.extras.state);
+        this.data['usuario'] = navigation.extras.state['usuario']; // Asignación correcta
       } else {
         console.error('No se encontraron datos en extras.state');
-        this.router.navigate(['/login/ingresar']);
+        this.router.navigate(['/login/ingresar']); // Redirección en caso de error
       }
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    // Puedes agregar lógica de inicialización aquí si es necesario
+    console.log('Componente HomePage inicializado');
+  }
+
+  limpiarCampos() {
+    this.informacion.nombre = '';
+    this.informacion.apellido = '';
+    this.informacion.nivelEducacion = '';
+    this.informacion.fechaNacimiento = '';
+  }
+
+  mostrarInformacion() {
+    alert(`Nombre: ${this.informacion.nombre}
+  Apellido: ${this.informacion.apellido}
+  Nivel de Educación: ${this.informacion.nivelEducacion}
+  Fecha de Nacimiento: ${this.informacion.fechaNacimiento}`);
+  }
+ 
 }
 
 
