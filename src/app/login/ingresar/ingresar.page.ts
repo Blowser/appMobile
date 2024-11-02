@@ -15,11 +15,14 @@ export class IngresarPage {
   constructor(private router: Router) {}
 
   ingresar() {
-    if (this.user.usuario.length >= 3 && this.user.usuario.length <= 8 && /^\w+$/.test(this.user.usuario)) {
-      if (this.user.password.length === 4 && /^\d+$/.test(this.user.password)) {
+    // Validación del usuario
+    if (this.user.usuario.length >= 3 && this.user.usuario.length <= 8 && /^[a-zA-Z0-9]+$/.test(this.user.usuario)) {
+      // Validación de la contraseña numérica
+      if (this.user.password.length === 4 && /^[0-9]+$/.test(this.user.password)) {
+        // Pasar los datos al Home
         const navigationExtras: NavigationExtras = {
           state: {
-            usuario: this.user.usuario // Asegúrate de pasar los datos de usuario correctamente
+            usuario: this.user.usuario
           }
         };
         this.router.navigate(['/home'], navigationExtras);
@@ -31,5 +34,6 @@ export class IngresarPage {
     }
   }
 }
+
 
 
