@@ -18,13 +18,15 @@
     </ion-item>
     <ion-item>
       <ion-input class="animatable" [(ngModel)]="informacion.apellido" label="Apellido" placeholder="Ingrese Apellido" fill="outline"></ion-input>
-    </ion-item>    
+    </ion-item>
+    <ion-item>    
       <ion-select [(ngModel)]="informacion.nivelEducacion" label="Nivel de Educación" fill="outline" placeholder="Seleccione Nivel">
         <ion-select-option value="primaria">Primaria</ion-select-option>
         <ion-select-option value="secundaria">Secundaria</ion-select-option>
         <ion-select-option value="universitaria">Universitaria</ion-select-option>
         <ion-select-option value="postgrado">Postgrado</ion-select-option>
       </ion-select>
+    </ion-item>  
     <ion-item>
       <mat-form-field appearance="fill" style="width: 100%;">
         <mat-label>Fecha Nacimiento</mat-label>
