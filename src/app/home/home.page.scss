@@ -3,7 +3,8 @@
     color:#c9b037;
     font-size: 3rem;
     font-weight: bolder;
-    padding: 20px;   
+    padding: 20px;
+    animation: slide-in 1.5s ease-in-out;   
 }
 #nombreapp{    animation: slide-in 1s ease-in-out;    }
 @keyframes slide-in {
@@ -32,4 +33,6 @@
     --padding-start: 0;
     --padding-end: 0;
   }
-  
+  #escriturafooter{  
+    animation: slide-in 1.5s ease-in-out;   
+  }
