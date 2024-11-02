@@ -18,6 +18,14 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+  },
+  {
+    path: 'mapa',
+    loadChildren: () => import('./explorador/mapa/mapa.module').then( m => m.MapaPageModule)
+  },
+  {
+    path: 'modificarperfil',
+    loadChildren: () => import('./explorador/modificarperfil/modificarperfil.module').then( m => m.ModificarperfilPageModule)
   }
 ];
 
