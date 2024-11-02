@@ -10,17 +10,17 @@
     <p><strong>Usuario:</strong> {{ data.usuario }}</p>
   </div>
 
-  <h2 id="tituloinfoadd" class="titulo-seccion" >Información Adicional</h2>
+  <h2 id="tituloinfoadd" class="titulo-seccion">Información Adicional</h2>
 
   <ion-list>
     <ion-item>
-      <ion-input label="Nombre" placeholder="Ingrese Nombre" fill="outline"></ion-input>
+      <ion-input [(ngModel)]="informacion.nombre" label="Nombre" placeholder="Ingrese Nombre" fill="outline"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input label="Apellido" placeholder="Ingrese Apellido" fill="outline"></ion-input>
+      <ion-input [(ngModel)]="informacion.apellido" label="Apellido" placeholder="Ingrese Apellido" fill="outline"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-select label="Nivel de Educación" fill="outline" placeholder="Seleccione Nivel">
+      <ion-select [(ngModel)]="informacion.nivelEducacion" label="Nivel de Educación" fill="outline" placeholder="Seleccione Nivel">
         <ion-select-option value="primaria">Primaria</ion-select-option>
         <ion-select-option value="secundaria">Secundaria</ion-select-option>
         <ion-select-option value="universitaria">Universitaria</ion-select-option>
@@ -28,19 +28,19 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-input type="date" label="Fecha Nacimiento" placeholder="Seleccione Fecha" fill="outline"></ion-input>
+      <ion-input [(ngModel)]="informacion.fechaNacimiento" type="date" label="Fecha Nacimiento" placeholder="Seleccione Fecha" fill="outline"></ion-input>
     </ion-item>
   </ion-list>
 
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-button expand="block" style="--background: var(--ion-color-button-bg); --color: var(--ion-color-button-text);">
+        <ion-button expand="block" (click)="limpiarCampos()" style="--background: var(--ion-color-button-bg); --color: var(--ion-color-button-text);">
           Limpiar
         </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button expand="block" style="--background: var(--ion-color-button-bg); --color: var(--ion-color-button-text);">
+        <ion-button expand="block" (click)="mostrarInformacion()" style="--background: var(--ion-color-button-bg); --color: var(--ion-color-button-text);">
           Mostrar
         </ion-button>
       </ion-col>
@@ -48,10 +48,5 @@
   </ion-grid>
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar style="--background: var(--ion-color-footer-bg); --color: var(--ion-color-footer-text);">
-    <ion-title>App Desarrollada por IJCG</ion-title>
-  </ion-toolbar>
-</ion-footer>
 
 
