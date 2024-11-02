@@ -34,6 +34,14 @@ export class HomePage implements OnInit { // Implementación de OnInit
   }
 
   limpiarCampos() {
+    const inputs = document.querySelectorAll('.animatable');
+    inputs.forEach((input) => {
+      const element = input as HTMLElement; // Casting a HTMLElement
+      element.classList.remove('animate-slide-in'); // Reinicia la animación si ya estaba aplicada
+      void element.offsetWidth; // Forzar reflujo para reiniciar la animación
+      element.classList.add('animate-slide-in');
+    });
+  
     this.informacion.nombre = '';
     this.informacion.apellido = '';
     this.informacion.nivelEducacion = '';
