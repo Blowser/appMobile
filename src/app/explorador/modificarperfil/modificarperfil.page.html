@@ -1,13 +1,57 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>modificarperfil</ion-title>
+<ion-header>
+  <ion-toolbar style="--background: var(--ion-color-header-bg); --color: var(--ion-color-header-text);">
+    <ion-title id="nombreapp">SkeletonApp</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">modificarperfil</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="seccion-modificar">
+    <h1 id="titulomodificar">Modificar perfil</h1>
+  </div>
+
+  <ion-list>
+    <ion-item>
+      <ion-input [(ngModel)]="perfil.nombre" label="Nombre" placeholder="Ingrese su nombre" fill="outline"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="perfil.apellido" label="Apellido" placeholder="Ingrese su apellido" fill="outline"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select [(ngModel)]="perfil.nivelEducacion" label="Nivel de Educación" fill="outline" placeholder="Seleccione Nivel">
+        <ion-select-option value="primaria">Primaria</ion-select-option>
+        <ion-select-option value="secundaria">Secundaria</ion-select-option>
+        <ion-select-option value="universitaria">Universitaria</ion-select-option>
+        <ion-select-option value="postgrado">Postgrado</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="perfil.fechaNacimiento" type="date" label="Fecha de Nacimiento" fill="outline"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="perfil.email" type="email" label="Correo" placeholder="Ingrese su correo" fill="outline"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="perfil.usuario" label="Usuario" placeholder="Ingrese su usuario" fill="outline"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="perfil.password" type="password" label="Contraseña" placeholder="Ingrese su contraseña" fill="outline"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" (click)="guardarCambios()" style="--background: var(--ion-color-button-bg); --color: var(--ion-color-button-text);">
+          Guardar cambios
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar style="--background: var(--ion-color-footer-bg); --color: var(--ion-color-footer-text);">
+    <ion-title id="escriturafooter" style="text-align: center;">App desarrollada por ICJG</ion-title>
+  </ion-toolbar>
+</ion-footer>
+
