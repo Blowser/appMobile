@@ -10,16 +10,16 @@
 
   <ion-list>
     <ion-item>
-      <ion-input label="Usuario" placeholder="Ingrese su usuario" [(ngModel)]="data.usuario" fill="outline"></ion-input>
+      <ion-input label="Usuario" placeholder="Ingrese su usuario" [(ngModel)]="datosUsuario.usuario" fill="outline"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="email" label="Correo Electrónico" placeholder="Ingrese su correo electrónico" [(ngModel)]="data.email" fill="outline"></ion-input>
+      <ion-input type="email" label="Correo Electrónico" placeholder="Ingrese su correo electrónico" [(ngModel)]="datosUsuario.email" fill="outline"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="password" label="Contraseña" placeholder="Ingrese su contraseña" [(ngModel)]="data.password" fill="outline"></ion-input>
+      <ion-input type="password" label="Contraseña" placeholder="Ingrese su contraseña" [(ngModel)]="datosUsuario.password" fill="outline"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="password" label="Confirmar Contraseña" placeholder="Confirme su contraseña" [(ngModel)]="data.confirmPassword" fill="outline"></ion-input>
+      <ion-input type="password" label="Confirmar Contraseña" placeholder="Confirme su contraseña" [(ngModel)]="datosUsuario.confirmPassword" fill="outline"></ion-input>
     </ion-item>
   </ion-list>
 
@@ -33,4 +33,5 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
 
