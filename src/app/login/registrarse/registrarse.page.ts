@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./registrarse.page.scss'],
 })
 export class RegistrarsePage {
-  data: any = {
+  datosUsuario = {
     usuario: '',
     email: '',
     password: '',
@@ -18,14 +18,14 @@ export class RegistrarsePage {
 
   registrarse() {
     // Validación del usuario (3-8 caracteres alfanuméricos)
-    if (this.data.usuario.length >= 3 && this.data.usuario.length <= 8 && /^[a-zA-Z0-9]+$/.test(this.data.usuario)) {
+    if (this.datosUsuario.usuario.length >= 3 && this.datosUsuario.usuario.length <= 8 && /^[a-zA-Z0-9]+$/.test(this.datosUsuario.usuario)) {
       // Validación de la contraseña numérica de 4 dígitos
-      if (this.data.password.length === 4 && /^[0-9]+$/.test(this.data.password)) {
+      if (this.datosUsuario.password.length === 4 && /^[0-9]+$/.test(this.datosUsuario.password)) {
         // Verificar si las contraseñas coinciden
-        if (this.data.password === this.data.confirmPassword) {
+        if (this.datosUsuario.password === this.datosUsuario.confirmPassword) {
           // Validación del formato del correo
-          if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.data.email)) {
-            console.log('Usuario registrado:', this.data);
+          if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.datosUsuario.email)) {
+            console.log('Usuario registrado:', this.datosUsuario);
             alert('Registro exitoso. Redirigiendo al login...');
             this.router.navigate(['/login/ingresar']);
           } else {
@@ -42,3 +42,4 @@ export class RegistrarsePage {
     }
   }
 }
+
