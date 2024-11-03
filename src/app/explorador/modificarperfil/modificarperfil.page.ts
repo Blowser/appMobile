@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modificarperfil',
@@ -8,28 +8,30 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ModificarPerfilPage implements OnInit {
   datosUsuario: any = {
-    usuario: '',
-    password: ''
+    usuario: 'usuarioEjemplo',
+    password: 'contraseñaEjemplo'
   };
 
   informacion: any = {
-    nombre: '',
-    apellido: '',
-    nivelEducacion: '',
-    fechaNacimiento: ''
+    nombre: 'NombreEjemplo',
+    apellido: 'ApellidoEjemplo',
+    nivelEducacion: 'Universitaria',
+    fechaNacimiento: '2000-01-01'
   };
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    // Verificar si hay datos pasados por la navegación
-    const state = history.state;
-    if (state.usuario) {
-      this.datosUsuario.usuario = state.usuario;
-      console.log('Datos de usuario cargados desde la navegación:', this.datosUsuario);
-    }
+    console.log('Datos inicializados en ModificarPerfilPage:', this.datosUsuario, this.informacion);
+  }
 
-    // Puedes incluir aquí lógica adicional para obtener más datos de almacenamiento local o servicios si es necesario
+  regresar() {
+    this.router.navigate(['/mapa']);
+  }
+
+  guardarCambios() {
+    console.log('Cambios guardados:', this.datosUsuario, this.informacion);
+    alert('Cambios guardados correctamente.');
   }
 }
 
