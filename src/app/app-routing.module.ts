@@ -25,11 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'modificarperfil',
-    loadChildren: () => import('./explorador/modificarperfil/modificarperfil.module').then( m => m.ModificarperfilPageModule)
-  },
-  {
-    path: 'modificarperfil',
-    loadChildren: () => import('./explorador/modificarperfil/modificarperfil.module').then( m => m.ModificarperfilPageModule)
+    loadChildren: () => import('./explorador/modificarperfil/modificarperfil.module').then( m => m.ModificarPerfilPageModule)
   }
 ];
 
