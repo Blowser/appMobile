@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage implements OnInit { // Implementación de OnInit
+export class HomePage implements OnInit {
   data: any = { usuario: '' };
-  informacion = { // Inicialización del objeto de información
+  informacion = {
     nombre: '',
     apellido: '',
     nivelEducacion: '',
@@ -20,28 +20,27 @@ export class HomePage implements OnInit { // Implementación de OnInit
       const navigation = this.router.getCurrentNavigation();
       if (navigation && navigation.extras.state && navigation.extras.state['usuario']) {
         console.log('Datos recibidos en Home:', navigation.extras.state);
-        this.data['usuario'] = navigation.extras.state['usuario']; // Asignación correcta
+        this.data['usuario'] = navigation.extras.state['usuario'];
       } else {
         console.error('No se encontraron datos en extras.state');
-        this.router.navigate(['/login/ingresar']); // Redirección en caso de error
+        this.router.navigate(['/login/ingresar']);
       }
     });
   }
 
   ngOnInit() {
-    // Puedes agregar lógica de inicialización aquí si es necesario
     console.log('Componente HomePage inicializado');
   }
 
   limpiarCampos() {
     const inputs = document.querySelectorAll('.animatable');
     inputs.forEach((input) => {
-      const element = input as HTMLElement; // Casting a HTMLElement
-      element.classList.remove('animate-slide-in'); // Reinicia la animación si ya estaba aplicada
-      void element.offsetWidth; // Forzar reflujo para reiniciar la animación
+      const element = input as HTMLElement;
+      element.classList.remove('animate-slide-in');
+      void element.offsetWidth;
       element.classList.add('animate-slide-in');
     });
-  
+
     this.informacion.nombre = '';
     this.informacion.apellido = '';
     this.informacion.nivelEducacion = '';
@@ -49,12 +48,27 @@ export class HomePage implements OnInit { // Implementación de OnInit
   }
 
   mostrarInformacion() {
-    alert(`Nombre: ${this.informacion.nombre}
-  Apellido: ${this.informacion.apellido}
-  Nivel de Educación: ${this.informacion.nivelEducacion}
-  Fecha de Nacimiento: ${this.informacion.fechaNacimiento}`);
+    if (this.informacion.nombre && this.informacion.apellido) {
+      alert(`Nombre: ${this.informacion.nombre}
+Apellido: ${this.informacion.apellido}
+Nivel de Educación: ${this.informacion.nivelEducacion}
+Fecha de Nacimiento: ${this.informacion.fechaNacimiento}`);
+
+      console.log('Información mostrada:', this.informacion);
+      setTimeout(() => {
+        const navigationExtras: NavigationExtras = {
+          state: {
+            usuario: this.data.usuario,
+            ...this.informacion
+          }
+        };
+        this.router.navigate(['/mapa'], navigationExtras);
+      }, 100);
+    } else {
+      alert('Por favor complete todos los campos antes de continuar.');
+    }
   }
- 
 }
+
 
 
