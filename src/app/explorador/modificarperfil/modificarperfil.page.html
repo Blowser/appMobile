@@ -1,39 +1,32 @@
 <ion-header>
   <ion-toolbar style="--background: var(--ion-color-header-bg); --color: var(--ion-color-header-text);">
-    <ion-title>Modificar Perfil</ion-title>
+    <ion-title id="nombreapp">SkeletonApp</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content style="--background: var(--ion-color-content-bg); --color: var(--ion-color-content-text);">
   <div class="seccion-bienvenida">
-    <h1>Modificar Perfil</h1>
-    <p><strong>Usuario Actual:</strong> {{ data.usuario }}</p>
-    <p><strong>Contraseña:</strong> {{ data.password }}</p>
-  </div>
-
+    <h1 id="tituloperfil">Modificar Perfil</h1>
+  </div> 
+  
   <ion-list>
     <ion-item>
-      <ion-input [(ngModel)]="data.usuario" label="Usuario" placeholder="Ingrese su usuario" fill="outline"></ion-input>
+      <p><strong>Usuario:</strong> {{ data.usuario }}</p>
     </ion-item>
     <ion-item>
-      <ion-input type="password" [(ngModel)]="data.password" label="Contraseña" placeholder="Ingrese su contraseña" fill="outline"></ion-input>
+      <p><strong>Contraseña:</strong> {{ data.password }}</p>
     </ion-item>
     <ion-item>
-      <ion-input [(ngModel)]="data.nombre" label="Nombre" placeholder="Ingrese su nombre" fill="outline"></ion-input>
+      <p><strong>Nombre:</strong> {{ informacion.nombre }}</p>
     </ion-item>
     <ion-item>
-      <ion-input [(ngModel)]="data.apellido" label="Apellido" placeholder="Ingrese su apellido" fill="outline"></ion-input>
+      <p><strong>Apellido:</strong> {{ informacion.apellido }}</p>
     </ion-item>
     <ion-item>
-      <ion-select [(ngModel)]="data.nivelEducacion" label="Nivel de Educación" fill="outline" placeholder="Seleccione Nivel">
-        <ion-select-option value="primaria">Primaria</ion-select-option>
-        <ion-select-option value="secundaria">Secundaria</ion-select-option>
-        <ion-select-option value="universitaria">Universitaria</ion-select-option>
-        <ion-select-option value="postgrado">Postgrado</ion-select-option>
-      </ion-select>
+      <p><strong>Nivel de Educación:</strong> {{ informacion.nivelEducacion }}</p>
     </ion-item>
     <ion-item>
-      <ion-datetime [(ngModel)]="data.fechaNacimiento" label="Fecha de Nacimiento" display-format="DD/MM/YYYY" placeholder="Seleccione Fecha"></ion-datetime>
+      <p><strong>Fecha de Nacimiento:</strong> {{ informacion.fechaNacimiento }}</p>
     </ion-item>
   </ion-list>
 </ion-content>
