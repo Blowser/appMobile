@@ -16,7 +16,7 @@ export class ModificarPerfilPage implements OnInit {
     nombre: 'NombreEjemplo',
     apellido: 'ApellidoEjemplo',
     nivelEducacion: 'Universitaria',
-    fechaNacimiento: '2000-01-01'
+    fechaNacimiento: '2000-01-01' // Formato YYYY-MM-DD
   };
 
   constructor(private router: Router) {}
@@ -30,6 +30,12 @@ export class ModificarPerfilPage implements OnInit {
   }
 
   guardarCambios() {
+    // Validación simple para el formato de fecha (opcional)
+    const fechaRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!fechaRegex.test(this.informacion.fechaNacimiento)) {
+      alert('Ingrese la fecha en formato correcto (YYYY-MM-DD).');
+      return;
+    }
     console.log('Cambios guardados:', this.datosUsuario, this.informacion);
     alert('Cambios guardados correctamente.');
   }
