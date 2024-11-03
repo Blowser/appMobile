@@ -1,51 +1,13 @@
-<ion-header>
-  <ion-toolbar style="--background: var(--ion-color-header-bg); --color: var(--ion-color-header-text);">
-    <ion-title id="nombreapp">SkeletonApp</ion-title>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>modificarperfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content style="--background: var(--ion-color-content-bg); --color: var(--ion-color-content-text);">
-  <div class="seccion-modificar">
-    <h1 id="titulomodificar">Modificar perfil</h1>
-
-    <ion-list>
-      <ion-item>
-        <ion-input label="Usuario" placeholder="Usuario" [(ngModel)]="informacion.usuario" fill="outline"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input type="email" label="Correo Electrónico" placeholder="Correo Electrónico" [(ngModel)]="informacion.email" fill="outline"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input type="password" label="Contraseña" placeholder="Contraseña" [(ngModel)]="informacion.password" fill="outline"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input label="Nombre" placeholder="Nombre" [(ngModel)]="informacion.nombre" fill="outline"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input label="Apellido" placeholder="Apellido" [(ngModel)]="informacion.apellido" fill="outline"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-select label="Nivel de Educación" [(ngModel)]="informacion.nivelEducacion" fill="outline">
-          <ion-select-option value="primaria">Primaria</ion-select-option>
-          <ion-select-option value="secundaria">Secundaria</ion-select-option>
-          <ion-select-option value="universitaria">Universitaria</ion-select-option>
-          <ion-select-option value="postgrado">Postgrado</ion-select-option>
-        </ion-select>
-      </ion-item>
-      <ion-item>
-        <ion-input type="date" label="Fecha de Nacimiento" [(ngModel)]="informacion.fechaNacimiento" fill="outline"></ion-input>
-      </ion-item>
-    </ion-list>
-
-    <ion-button expand="block" (click)="guardarCambios()" style="--background: var(--ion-color-button-bg); --color: var(--ion-color-button-text);">
-      Guardar Cambios
-    </ion-button>
-  </div>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">modificarperfil</ion-title>
+    </ion-toolbar>
+  </ion-header>
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar style="--background: var(--ion-color-footer-bg); --color: var(--ion-color-footer-text);">
-    <ion-title id="escriturafooter" style="text-align: center;">App desarrollada por ICJG</ion-title>
-  </ion-toolbar>
-</ion-footer>
-
