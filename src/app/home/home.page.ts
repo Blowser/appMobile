@@ -7,7 +7,7 @@ import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  data: any = { usuario: '' };
+  datosUsuario: any = { usuario: '' }; // Asegúrate de definir esta propiedad
   informacion = {
     nombre: '',
     apellido: '',
@@ -20,7 +20,7 @@ export class HomePage implements OnInit {
       const navigation = this.router.getCurrentNavigation();
       if (navigation && navigation.extras.state && navigation.extras.state['usuario']) {
         console.log('Datos recibidos en Home:', navigation.extras.state);
-        this.data['usuario'] = navigation.extras.state['usuario'];
+        this.datosUsuario['usuario'] = navigation.extras.state['usuario'];
       } else {
         console.error('No se encontraron datos en extras.state');
         this.router.navigate(['/login/ingresar']);
@@ -58,7 +58,7 @@ Fecha de Nacimiento: ${this.informacion.fechaNacimiento}`);
       setTimeout(() => {
         const navigationExtras: NavigationExtras = {
           state: {
-            usuario: this.data.usuario,
+            usuario: this.datosUsuario.usuario,
             ...this.informacion
           }
         };
@@ -69,6 +69,7 @@ Fecha de Nacimiento: ${this.informacion.fechaNacimiento}`);
     }
   }
 }
+
 
 
 
