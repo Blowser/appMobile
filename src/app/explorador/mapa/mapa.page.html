@@ -1,18 +1,30 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Mapa</ion-title>
+  <ion-toolbar style="--background: var(--ion-color-header-bg); --color: var(--ion-color-header-text);">
+    <ion-title id="nombreapp">SkeletonApp</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="map-container">
-    <img src="assets/map_placeholder.jpg" alt="Mapa" class="map-image"/>
-  </div>
-</ion-content>
+  <ion-content>
+    <h2 id="titulomapa" class="titulo-seccion">Mapa</h2>
+    <div style="display: flex; justify-content: center; align-items: center; height: 80%;">
+      <img src="assets/images/mapa_ejemplo.jpg" alt="Mapa de ejemplo" style="max-width: 80%; height: auto; border-radius: 10px;">
+    </div>
+  </ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>Explorador - Mapa</ion-title>
-  </ion-toolbar>
-</ion-footer>
+  <ion-footer>
+    <ion-toolbar style="--background: var(--ion-color-footer-bg); --color: var(--ion-color-footer-text);">
+      <ion-buttons slot="start">
+        <ion-button (click)="navigateTo('inicio')">Inicio</ion-button>
+        <ion-button (click)="navigateTo('modificarperfil')">Perfil</ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button>Opciones</ion-button>
+        <ion-button>Ayuda</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+    <ion-toolbar style="--background: var(--ion-color-footer-bg); --color: var(--ion-color-footer-text);">
+      <ion-title id="escriturafooter" style="text-align: center;">App desarrollada por ICJG</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+
 
