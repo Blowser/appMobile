@@ -30,7 +30,7 @@ export class ModificarPerfilPage implements OnInit {
   }
 
   guardarCambios() {
-    // Validación simple para el formato de fecha (opcional)
+    // Validación simple para el formato de fecha 
     const fechaRegex = /^\d{4}-\d{2}-\d{2}$/;
     if (!fechaRegex.test(this.informacion.fechaNacimiento)) {
       alert('Ingrese la fecha en formato correcto (YYYY-MM-DD).');
