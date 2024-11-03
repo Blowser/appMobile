@@ -11,23 +11,30 @@
   
   <ion-list>
     <ion-item>
-      <p><strong>Usuario:</strong> {{ datosUsuario.usuario }}</p>
+      <ion-input label="Usuario" [(ngModel)]="datosUsuario.usuario" placeholder="Ingrese usuario" fill="outline"></ion-input>
     </ion-item>
     <ion-item>
-      <p><strong>Contraseña:</strong> {{ datosUsuario.password }}</p>
+      <ion-input label="Contraseña" type="password" [(ngModel)]="datosUsuario.password" placeholder="Ingrese contraseña" fill="outline"></ion-input>
     </ion-item>
     <ion-item>
-      <p><strong>Nombre:</strong> {{ informacion.nombre }}</p>
+      <ion-input label="Nombre" [(ngModel)]="informacion.nombre" placeholder="Ingrese nombre" fill="outline"></ion-input>
     </ion-item>
     <ion-item>
-      <p><strong>Apellido:</strong> {{ informacion.apellido }}</p>
+      <ion-input label="Apellido" [(ngModel)]="informacion.apellido" placeholder="Ingrese apellido" fill="outline"></ion-input>
     </ion-item>
     <ion-item>
-      <p><strong>Nivel de Educación:</strong> {{ informacion.nivelEducacion }}</p>
+      <ion-select [(ngModel)]="informacion.nivelEducacion" label="Nivel de Educación" placeholder="Seleccione Nivel" fill="outline">
+        <ion-select-option value="primaria">Primaria</ion-select-option>
+        <ion-select-option value="secundaria">Secundaria</ion-select-option>
+        <ion-select-option value="universitaria">Universitaria</ion-select-option>
+        <ion-select-option value="postgrado">Postgrado</ion-select-option>
+      </ion-select>
     </ion-item>
     <ion-item>
-      <p><strong>Fecha de Nacimiento:</strong> {{ informacion.fechaNacimiento }}</p>
+      <input [(ngModel)]="informacion.fechaNacimiento" type="date" style="width: 100%;" />
     </ion-item>
+    
+     
   </ion-list>
 
   <ion-grid>
@@ -51,6 +58,8 @@
     <ion-title style="text-align: center;">App desarrollada por ICJG</ion-title>
   </ion-toolbar>
 </ion-footer>
+
+
 
 
 
