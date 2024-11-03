@@ -8,15 +8,15 @@ import { Router } from '@angular/router';
 })
 export class ModificarPerfilPage implements OnInit {
   datosUsuario: any = {
-    usuario: 'usuarioEjemplo',
-    password: 'contraseñaEjemplo'
+    usuario: '',
+    password: ''
   };
 
   informacion: any = {
-    nombre: 'NombreEjemplo',
-    apellido: 'ApellidoEjemplo',
-    nivelEducacion: 'Universitaria',
-    fechaNacimiento: '2000-01-01' // Formato YYYY-MM-DD
+    nombre: '',
+    apellido: '',
+    nivelEducacion: '',
+    fechaNacimiento: '' // Formato YYYY-MM-DD
   };
 
   constructor(private router: Router) {}
