@@ -7,7 +7,7 @@ import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  datosUsuario: any = { usuario: '' }; // Asegúrate de definir esta propiedad
+  datosUsuario: any = { usuario: '' }; 
   informacion = {
     nombre: '',
     apellido: '',
