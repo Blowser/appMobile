@@ -14,16 +14,26 @@
 
   <ion-list>
     <ion-item>
-      <p><strong>Nombre:</strong> {{ informacion.nombre }}</p>
+      <ion-input [(ngModel)]="informacion.nombre" placeholder="Ingrese su nombre" label="Nombre" fill="outline"></ion-input>
     </ion-item>
     <ion-item>
-      <p><strong>Apellido:</strong> {{ informacion.apellido }}</p>
+      <ion-input [(ngModel)]="informacion.apellido" placeholder="Ingrese su apellido" label="Apellido" fill="outline"></ion-input>
     </ion-item>
     <ion-item>
-      <p><strong>Nivel de Educación:</strong> {{ informacion.nivelEducacion }}</p>
+      <ion-select [(ngModel)]="informacion.nivelEducacion" label="Nivel de Educación" fill="outline" placeholder="Seleccione Nivel">
+        <ion-select-option value="primaria">Primaria</ion-select-option>
+        <ion-select-option value="secundaria">Secundaria</ion-select-option>
+        <ion-select-option value="universitaria">Universitaria</ion-select-option>
+        <ion-select-option value="postgrado">Postgrado</ion-select-option>
+      </ion-select>
     </ion-item>
     <ion-item>
-      <p><strong>Fecha de Nacimiento:</strong> {{ informacion.fechaNacimiento }}</p>
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>Fecha de Nacimiento</mat-label>
+        <input matInput [(ngModel)]="informacion.fechaNacimiento" [matDatepicker]="picker" placeholder="Seleccione Fecha">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
     </ion-item>
   </ion-list>
 
@@ -48,6 +58,8 @@
     <ion-title id="escriturafooter" style="text-align: center;">App desarrollada por ICJG</ion-title>
   </ion-toolbar>
 </ion-footer>
+
+
 
 
 
